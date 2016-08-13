@@ -26,6 +26,10 @@ output rendered { value = "${coreos_cloudconfig.userdata.rendered}" }
 
 `go get github.com/roboll/terraform-provider-coreos`
 
+_or_
+
+`curl -L -o /usr/local/bin/terraform-provider-coreos https://github.com/roboll/terraform-provider-coreos/releases/download/{VERSION}/terraform-provider-coreos_{OS}_{ARCH}`
+
 ## development
 
 [govendor](https://github.com/kardianos/govendor) for vendoring
