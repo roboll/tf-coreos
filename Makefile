@@ -23,9 +23,9 @@ cross:
 .PHONY: cross
 
 release: cross
-	@ghr -b "`git log ${TAG_PREV}..HEAD --oneline --decorate` [Build Info](${BUILD_URL})" \
-		-t ${GITHUB_TOKEN} -u ${ORG} ${TAG} dist
+	@ghr -b ${BODY} -t ${GITHUB_TOKEN} -u ${ORG} ${TAG} dist
 .PHONY: release
 
-TAG      = $(shell git describe --tags --abbrev=0 HEAD)
-TAG_PREV = $(shell git describe --tags --abbrev=0 HEAD^)
+TAG  = $(shell git describe --tags --abbrev=0 HEAD)
+LAST = $(shell git describe --tags --abbrev=0 HEAD^)
+BODY = "`git log ${LAST}..HEAD --oneline --decorate` `printf '\n\#\#\# [Build Info](${BUILD_URL})'`"
