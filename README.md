@@ -1,4 +1,4 @@
-# tf-coreos
+# tf-coreos [![CircleCI](https://circleci.com/gh/roboll/tf-coreos.svg?style=svg)](https://circleci.com/gh/roboll/tf-coreos)
 
 ## Module
 
